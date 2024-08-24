@@ -60,7 +60,7 @@ def main():
     dataset = load_dataset("databricks/databricks-dolly-15k")
 
     # Process the first 100 entries
-    for i in range(5001, 10000):
+    for i in range(12725, 15000):
         rewrite_with_oneill_style(i, dataset, client)
 
 
