@@ -22,7 +22,9 @@ def rewrite_with_oneill_style(index, dataset, client):
         "Here is the response: " + response)
 
     # Get the response from the chat completion API
-    completion = client.chat.completions.create(model="gpt-4",
+    # gpt-3.5-turbo
+    # gpt-4
+    completion = client.chat.completions.create(model="gpt-3.5-turbo",
                                                 messages=[{
                                                     "role": "user",
                                                     "content": request
@@ -58,7 +60,7 @@ def main():
     dataset = load_dataset("databricks/databricks-dolly-15k")
 
     # Process the first 100 entries
-    for i in range(2001, 3000):
+    for i in range(5001, 10000):
         rewrite_with_oneill_style(i, dataset, client)
 
 
